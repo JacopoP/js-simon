@@ -2,6 +2,7 @@ const arrNum = [];
 const contNum = document.getElementById("container-num");
 const contAns = document.getElementById("container-answ");
 
+// generazione numeri e visualizzazione
 while(arrNum.length < 5){
     const n = Math.floor(Math.random()*100 + 1);
     if(!arrNum.includes(n)){
@@ -13,8 +14,7 @@ for(let i=0; i<5; i++){
     contNum.innerHTML+=`<div class="box">${arrNum[i]}</div>`
 }
 
-console.log(arrNum);
-
+// countdown
 let index=30;
 const time=document.getElementById("timer");
 time.innerHTML=index;
@@ -28,13 +28,15 @@ const timer = setInterval(
     }, 1000
 );
 
+// delay per dare le risposte
 setTimeout(
     function(){
         contNum.classList.add("hide");
         contAns.classList.remove("hide");
-    }, 1000
+    }, 30000
 );
 
+// inserimento numeri e controllo
 let aux = 0;
 let score = 0;
 const answ = document.querySelector("input");
